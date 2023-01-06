@@ -33,17 +33,17 @@ export default function ForgotPassword() {
   const router = useRouter();
   return (
     <section className=" flex justify-center flex-col items-center bg-[#449eff] h-screen">
-      <div className=" mt-[100px] flex flex-col items-center">
+      <div className="flex flex-col items-center">
         <h2 className="text-[#fff] text-[1.5rem]  text-center">
           Forgot Password
         </h2>
       </div>
       <form
         onSubmit={(event) => formSubmitted(event, router.query.token)}
-        className="mt-[30px] mb-[15px]"
+        className="mt-[30px] mb-[15px] min-w-[30%]"
       >
         <input
-          className="block w-[350px] h-[50px] outline-none my-[25px] pl-4 rounded-md"
+          className="block w-full h-[50px] outline-none my-[25px] pl-4 rounded-md"
           type="password"
           placeholder="Enter Password"
           required
@@ -51,14 +51,14 @@ export default function ForgotPassword() {
         />
 
         <input
-          className="block w-[350px] h-[50px] outline-none my-[25px] pl-4 rounded-md"
+          className="block w-full h-[50px] outline-none my-[25px] pl-4 rounded-md"
           type="password"
           placeholder="Enter password again "
           required
           name="password-again"
         />
 
-        <button className="block bg-[#fff] text-[#449eff] px-[40px] py-[10px] mt-[30px] rounded mx-auto">
+        <button className="block my-0 mx-auto bg-[#fff] text-[#449eff] px-[40px] py-[10px] mt-[30px] rounded mx-auto">
           Reset Password
         </button>
       </form>
