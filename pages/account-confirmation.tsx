@@ -8,6 +8,7 @@ export default function Home() {
   const email = router.query.email;
 
   const [message, setMessage] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -28,10 +29,13 @@ export default function Home() {
 
     axios(config)
       .then(function (response: any) {
+        console.log("sdfhbsdh");
+        console.log(response);
         setMessage(response.data.msg);
       })
       .catch(function (error) {
         console.log(error);
+        setError(error);
       });
   }, [router.isReady]);
   if (message) {
@@ -42,7 +46,7 @@ export default function Home() {
         </div>
       </section>
     );
-  } else {
+  } else if (error) {
     return (
       <section className=" flex justify-center flex-col items-center bg-[#449eff] h-screen">
         <div className=" mt-[100px] flex flex-col items-center">
@@ -52,5 +56,5 @@ export default function Home() {
         </div>
       </section>
     );
-  }
+  } 
 }
